@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -23,15 +24,48 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.reflect
+
+    implementation deps.androidX.appcompat
+    implementation deps.androidX.constraintLayout
+    implementation deps.androidX.navigation.ui
+    implementation deps.androidX.navigation.fragment
+    implementation deps.androidX.design
+    implementation deps.androidX.lifecycle.extensions
+    kapt deps.androidX.lifecycle.compiler
+
+    implementation deps.dagger.core
+    implementation deps.dagger.android
+    implementation deps.dagger.androidSupport
+    kapt deps.dagger.processor
+    kapt deps.dagger.compiler
+
+    implementation deps.rxJava2.android
+    implementation deps.images.glide
+
+    implementation deps.network.retrofit2.retrofit
+    implementation deps.network.retrofit2.rxjava2adapter
+    implementation deps.network.retrofit2.converterMoshi
+    implementation deps.network.moshi.moshi
+    implementation deps.network.moshi.kotlin
+    implementation deps.network.moshi.adpater
+    kapt deps.network.moshi.codegen
 }
