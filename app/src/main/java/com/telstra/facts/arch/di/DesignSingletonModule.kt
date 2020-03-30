@@ -1,5 +1,6 @@
 package com.telstra.facts.arch.di
 
+import com.telstra.facts.arch.BaseFragment
 import com.telstra.facts.arch.viewmodel.UseCaseSchedulers
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,8 @@ class DesignSingletonModule {
         override val subscribeScheduler = Schedulers.io()
         override val observeScheduler = AndroidSchedulers.mainThread()
     }
+
+    @Provides
+    @Singleton
+    fun provideDummy(): BaseFragment.DaggerInjectionWorkaroundField = BaseFragment.DaggerInjectionWorkaroundField()
 }

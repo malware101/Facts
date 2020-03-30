@@ -69,4 +69,10 @@ abstract class UseCaseFragment<VM : UseCaseViewModel, RVM : BaseResultViewModel<
     }
 
     protected abstract fun initUseCaseViewModel(view: View, viewModel: VM)
+
+    // This is a workaround the issue with multiple same classes being generated if there is a middle class
+    // in Dagger hierarchy without @Inject fields.
+    // https://github.com/google/dagger/issues/814
+    @Inject
+    override lateinit var dummy: DaggerInjectionWorkaroundField
 }

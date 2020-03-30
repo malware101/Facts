@@ -2,7 +2,7 @@ package com.telstra.facts.di
 
 import androidx.lifecycle.ViewModel
 import com.telstra.facts.viewmodel.FactsListViewModel
-import com.westfield.common.viewmodel.ViewModelKey
+import com.telstra.facts.arch.viewmodel.ViewModelKey
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

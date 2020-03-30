@@ -43,4 +43,12 @@ abstract class BaseFragment<V : BaseResultViewModel<*>> : DaggerFragment() {
 
         return null
     }
+
+    // This is a workaround the issue with multiple same classes being generated if there is a middle class
+    // in Dagger hierarchy without @Inject fields.
+    // https://github.com/google/dagger/issues/814
+    class DaggerInjectionWorkaroundField
+
+    @Inject
+    protected open lateinit var dummy: DaggerInjectionWorkaroundField
 }

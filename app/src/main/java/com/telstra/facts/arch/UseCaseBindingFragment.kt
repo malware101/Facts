@@ -29,4 +29,10 @@ abstract class UseCaseBindingFragment<B : ViewDataBinding, VM : UseCaseViewModel
     }
 
     protected abstract fun initBinding(activity: FragmentActivity, binding: B)
+
+    // This is a workaround the issue with multiple same classes being generated if there is a middle class
+    // in Dagger hierarchy without @Inject fields.
+    // https://github.com/google/dagger/issues/814
+    @Inject
+    override lateinit var dummy: DaggerInjectionWorkaroundField
 }

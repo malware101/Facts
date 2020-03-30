@@ -32,10 +32,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    kapt {
-        generateStubs = true
-    }
 }
 
 dependencies {
@@ -43,7 +39,9 @@ dependencies {
 
     implementation deps.kotlin.stdlib
     implementation deps.kotlin.reflect
+    implementation deps.kotlin.anko
 
+    implementation deps.androidX.coreKtx
     implementation deps.androidX.appcompat
     implementation deps.androidX.constraintLayout
     implementation deps.androidX.navigation.ui

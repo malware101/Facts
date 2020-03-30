@@ -3,16 +3,15 @@ package com.telstra.facts.arch.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.telstra.facts.viewmodel.FactsListViewModel
-import com.telstra.facts.di.FactsViewModelModule
-import com.westfield.common.viewmodel.ViewModelFactory
-import com.westfield.common.viewmodel.ViewModelKey
+import com.telstra.facts.arch.viewmodel.ViewModelFactory
+import com.telstra.facts.arch.viewmodel.ViewModelKey
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module(
     includes = [
-        FactsViewModelModule::class
+        AppProvideViewModelModule::class
     ]
 )
 abstract class ViewModelBindingModule {

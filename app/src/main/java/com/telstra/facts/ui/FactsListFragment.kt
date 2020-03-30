@@ -1,5 +1,6 @@
 package com.telstra.facts.ui
 
+import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.FragmentActivity
@@ -29,6 +30,9 @@ class FactsListFragment
         viewModel.data.observe(this) {
             Log.d("test", it.size.toString())
         }
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel.load(Unit)
     }
 }

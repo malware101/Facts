@@ -1,4 +1,4 @@
-package com.westfield.common.viewmodel
+package com.telstra.facts.arch.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
