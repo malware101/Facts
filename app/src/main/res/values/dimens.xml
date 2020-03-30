@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- font sizes -->
+    <dimen name="font_unit_24">24sp</dimen>
+
+    <!-- typical spacing between two views, in multiples of 8dp -->
+    <dimen name="space_unit_1">8dp</dimen>
+    <dimen name="space_unit_2">16dp</dimen>
+    <dimen name="space_unit_3">24dp</dimen>
+    <dimen name="space_unit_4">32dp</dimen>
+    <dimen name="space_unit_5">40dp</dimen>
+</resources>

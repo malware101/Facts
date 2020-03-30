@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Facts</string>
+    <string name="facts_title">Facts List</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="try_again">Try Again</string>
+    <string name="title_error_dialog">We\'re sorry</string>
+    <string name="expired_content_error_dialog">This information is no longer available.</string>
+    <string name="generic_message_error_dialog">There was a problem loading this information. Please try again.</string>
+    <string name="generic_unknown_error_title">Something went wrong</string>
+    <string name="generic_unknown_error_message">Please try again or contact support.</string>
 </resources>
