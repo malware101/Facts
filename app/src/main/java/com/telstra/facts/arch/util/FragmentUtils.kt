@@ -66,9 +66,6 @@ fun NavController.navigateTo(currentNavId: Int, navId: Int, bundle: Bundle? = nu
                              navOptions: NavOptions? = null) {
     if (currentDestination?.id == currentNavId) {
         navigate(navId, bundle, navOptions)
-    } else {
-        // This can happen only when user tapped the current item twice or again,
-        // in that case current destination id will be mismatched with nav id
     }
 }
 

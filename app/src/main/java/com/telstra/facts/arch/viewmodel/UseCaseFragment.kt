@@ -3,6 +3,7 @@ package com.telstra.facts.arch.viewmodel
 import android.os.Bundle
 import android.view.View
 import com.telstra.facts.arch.ui.BaseFragment
+import com.telstra.facts.arch.util.showException
 import javax.inject.Inject
 
 /**
@@ -28,10 +29,7 @@ abstract class UseCaseFragment<VM : UseCaseViewModel, RVM : BaseResultViewModel<
         bindUseCaseViewModel(viewModel)
     }
 
-    protected fun bindUseCaseViewModel(viewModel: UseCaseViewModel) {
-//        viewModel.error.observe(this, ::processException)
-//        viewModel.isLoading.observe(this, ::processLoading)
-    }
+    protected fun bindUseCaseViewModel(viewModel: UseCaseViewModel) {}
 
     protected open fun unbindUseCaseViewModel(viewModel: VM) {
         viewModel.error.removeObservers(this)
@@ -60,12 +58,10 @@ abstract class UseCaseFragment<VM : UseCaseViewModel, RVM : BaseResultViewModel<
     }
 
     protected open fun processException(throwable: Throwable) {
-//        showException(throwable)
+        showException(throwable)
     }
 
-    protected open fun processLoading(isLoading: Boolean) {
-//        showProgress(isLoading)
-    }
+    protected open fun processLoading(isLoading: Boolean) {}
 
     protected abstract fun initUseCaseViewModel(view: View, viewModel: VM)
 

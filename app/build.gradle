@@ -57,7 +57,7 @@ dependencies {
     kapt deps.dagger.compiler
 
     implementation deps.rxJava2.android
-    
+
     implementation deps.images.glide
     implementation deps.images.glideRecyclerView
 
@@ -68,4 +68,16 @@ dependencies {
     implementation deps.network.moshi.kotlin
     implementation deps.network.moshi.adpater
     kapt deps.network.moshi.codegen
+
+    //tests
+    testImplementation deps.test.arch
+    testImplementation deps.test.androidxTestCore
+    testImplementation deps.test.jupiterApi
+    testImplementation deps.test.strikt
+    testRuntimeOnly deps.test.jupiterEngine
+    testImplementation deps.test.mockk
+
+    testImplementation deps.test.jupiterParams
+    androidTestImplementation deps.test.strikt
+    androidTestImplementation deps.test.mockk
 }

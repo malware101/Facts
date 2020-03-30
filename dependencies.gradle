@@ -33,6 +33,13 @@ versions.moshi = "1.9.2"
 // Image Loading and Caching
 versions.glide = "4.11.0"
 
+// Test
+versions.junitJupiter = "5.6.1"
+versions.androidxTest = "1.2.0"
+versions.strikt = "0.24.0"
+versions.mockk = "1.9.3"
+versions.jacoco = "0.8.5"
+
 ext.versions = versions
 
 def buildVersions = [:]
@@ -112,5 +119,14 @@ def images = [:]
     images.glideRecyclerView = "com.github.bumptech.glide:recyclerview-integration:$versions.glide"
 deps.images = images
 
+def test = [:]
+    test.jupiterApi = "org.junit.jupiter:junit-jupiter-api:$versions.junitJupiter"
+    test.jupiterEngine = "org.junit.jupiter:junit-jupiter-engine:$versions.junitJupiter"
+    test.jupiterParams = "org.junit.jupiter:junit-jupiter-params:$versions.junitJupiter"
+    test.strikt = "io.strikt:strikt-core:$versions.strikt"
+    test.mockk = "io.mockk:mockk:$versions.mockk"
+    test.androidxTestCore = "androidx.test:core:$versions.androidxTest"
+    test.arch = "androidx.arch.core:core-testing:$versions.lifecycle"
+deps.test = test
 
 

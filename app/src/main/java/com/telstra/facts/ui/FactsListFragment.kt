@@ -26,6 +26,8 @@ class FactsListFragment
         private const val PRELOAD_SIZE = 50
     }
 
+    private var currentState: String? = null
+
     private lateinit var factsListAdapter: FactsListAdapter
 
     override val layoutResId = R.layout.facts_list_fragment
@@ -68,4 +70,8 @@ class FactsListFragment
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        viewModel.saveState(outState)
+    }
 }
