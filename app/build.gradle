@@ -57,7 +57,9 @@ dependencies {
     kapt deps.dagger.compiler
 
     implementation deps.rxJava2.android
+    
     implementation deps.images.glide
+    implementation deps.images.glideRecyclerView
 
     implementation deps.network.retrofit2.retrofit
     implementation deps.network.retrofit2.rxjava2adapter

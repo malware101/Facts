@@ -1,4 +1,4 @@
-package com.telstra.facts.arch
+package com.telstra.facts.arch.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

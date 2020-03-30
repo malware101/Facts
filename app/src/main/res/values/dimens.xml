@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- font sizes -->
+    <dimen name="font_unit_9">9sp</dimen>
+    <dimen name="font_unit_12">12sp</dimen>
+    <dimen name="font_unit_16">16sp</dimen>
     <dimen name="font_unit_24">24sp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="list_logo_icon_size">48dp</dimen>
+    <dimen name="row_min_height">72dp</dimen>
+    <dimen name="action_icon_height">16dp</dimen>
+    <dimen name="action_icon_width">16dp</dimen>
 
     <!-- typical spacing between two views, in multiples of 8dp -->
     <dimen name="space_unit_1">8dp</dimen>

@@ -1,6 +1,6 @@
 package com.telstra.facts.arch.di
 
-import com.telstra.facts.arch.BaseFragment
+import com.telstra.facts.arch.ui.BaseFragment
 import com.telstra.facts.arch.viewmodel.UseCaseSchedulers
 import dagger.Module
 import dagger.Provides

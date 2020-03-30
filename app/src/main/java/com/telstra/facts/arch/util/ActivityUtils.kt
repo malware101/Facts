@@ -2,7 +2,7 @@ package com.telstra.facts.arch.util
 
 import androidx.fragment.app.FragmentActivity
 import com.telstra.facts.R
-import com.telstra.facts.arch.ErrorDialogFragment
+import com.telstra.facts.arch.ui.ErrorDialogFragment
 
 fun FragmentActivity.showAlert(
     msg: CharSequence?,

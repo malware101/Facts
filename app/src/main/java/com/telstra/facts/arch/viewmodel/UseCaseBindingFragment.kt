@@ -1,4 +1,4 @@
-package com.telstra.facts.arch
+package com.telstra.facts.arch.viewmodel
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
-import com.telstra.facts.arch.viewmodel.BaseResultViewModel
-import com.telstra.facts.arch.viewmodel.UseCaseViewModel
 import javax.inject.Inject
 
 /**

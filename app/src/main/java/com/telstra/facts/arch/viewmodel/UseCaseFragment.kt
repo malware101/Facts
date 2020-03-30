@@ -1,9 +1,8 @@
-package com.telstra.facts.arch
+package com.telstra.facts.arch.viewmodel
 
 import android.os.Bundle
 import android.view.View
-import com.telstra.facts.arch.viewmodel.BaseResultViewModel
-import com.telstra.facts.arch.viewmodel.UseCaseViewModel
+import com.telstra.facts.arch.ui.BaseFragment
 import javax.inject.Inject
 
 /**

@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
+    <color name="divider">#F5F6F7</color>
+    <color name="licorice">#5A82B9</color>
+    <color name="quartz">#58585F</color>
+    <color name="ghost">#D9DADD</color>
 </resources>

@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/title"
-            style="@style/Title.Light"
+            style="@style/Title.Blue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_unit_4"

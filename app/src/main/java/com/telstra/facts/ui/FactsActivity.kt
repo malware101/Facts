@@ -1,8 +1,7 @@
 package com.telstra.facts.ui
 
-import android.os.Bundle
 import com.telstra.facts.R
-import com.telstra.facts.arch.BaseActivity
+import com.telstra.facts.arch.ui.BaseActivity
 
 class FactsActivity : BaseActivity() {
 

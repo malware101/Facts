@@ -1,4 +1,4 @@
-package com.telstra.facts.arch
+package com.telstra.facts.arch.ui
 
 import android.app.Dialog
 import android.content.DialogInterface
@@ -26,9 +26,19 @@ class ErrorDialogFragment : DialogFragment() {
             cancellable: Boolean,
             fragmentManager: FragmentManager,
             listener: ((Int) -> Unit)?
-        ) = newInstance(title, message, positiveButton, negativeButton, neutralButton, cancellable, listener).apply {
+        ) = newInstance(
+            title,
+            message,
+            positiveButton,
+            negativeButton,
+            neutralButton,
+            cancellable,
+            listener
+        ).apply {
             isCancelable = cancellable
-            show(fragmentManager, TAG)
+            show(fragmentManager,
+                TAG
+            )
         }
 
         private fun newInstance(
@@ -39,7 +49,8 @@ class ErrorDialogFragment : DialogFragment() {
             neutralButton: CharSequence?,
             cancellable: Boolean,
             listener: ((Int) -> Unit)?
-        ): ErrorDialogFragment = ErrorDialogFragment().apply {
+        ): ErrorDialogFragment = ErrorDialogFragment()
+            .apply {
             setButtonListener(listener)
 //            arguments = bundleOf(
 //                ARG_TITLE to title,
