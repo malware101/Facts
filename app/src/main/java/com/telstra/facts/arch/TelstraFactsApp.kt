@@ -19,10 +19,12 @@ class TelstraFactsApp : DaggerApplication() {
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        val context = applicationContext
+
         return DaggerApplicationComponent
             .builder()
             .application(this)
-            .networkModule(NetworkModule())
+            .networkModule(NetworkModule(context))
             .build()
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#5A82B9</color>
+    <color name="colorPrimaryDark">#5A82B9</color>
+    <color name="colorAccent">#D9DADD</color>
     <color name="white">#FFFFFF</color>
     <color name="divider">#F5F6F7</color>
     <color name="licorice">#5A82B9</color>

@@ -7,7 +7,7 @@ interface FactsRepository {
     fun fetchFacts(): Observable<Facts>
 }
 
-internal class FactsRepositoryImpl(private val factsService: FactsService) : FactsRepository {
+class FactsRepositoryImpl(private val factsService: FactsService) : FactsRepository {
 
     companion object {
         private const val FACTS_URL =

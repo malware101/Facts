@@ -1,7 +1,9 @@
 package com.telstra.facts.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -18,15 +20,12 @@ import com.telstra.facts.viewmodel.FactsListViewModel
 import kotlinx.android.synthetic.main.facts_list_fragment.*
 import javax.inject.Inject
 
-class FactsListFragment
-//    : BaseFragment<VoidResultViewModel> (){
-    : UseCaseBindingFragment<FactsListFragmentBinding, FactsListViewModel, VoidResultViewModel>() {
+class FactsListFragment :
+    UseCaseBindingFragment<FactsListFragmentBinding, FactsListViewModel, VoidResultViewModel>() {
 
     companion object {
         private const val PRELOAD_SIZE = 50
     }
-
-    private var currentState: String? = null
 
     private lateinit var factsListAdapter: FactsListAdapter
 
@@ -41,8 +40,23 @@ class FactsListFragment
 
     override fun initUseCaseViewModel(view: View, viewModel: FactsListViewModel) {
         setListAdapter()
-        viewModel.data.observe(this) {
-            factsListAdapter.setItems(createFactItems(it))
+        viewModel.data.observe(this) { facts ->
+            setActionBarTitle(facts.title)
+            factsListAdapter.setItems(createFactItems(facts.rows))
+        }
+
+        // Set Pull To Refresh View
+        swipeToRefresh.setProgressBackgroundColorSchemeColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ghost
+            )
+        )
+        swipeToRefresh.setColorSchemeColors(Color.WHITE)
+        swipeToRefresh.setOnRefreshListener {
+            factsListAdapter.clearItems()
+            viewModel.load(Unit)
+            swipeToRefresh.isRefreshing = false
         }
     }
 
@@ -51,8 +65,16 @@ class FactsListFragment
         viewModel.load(Unit)
     }
 
-    private fun createFactItems(facts: List<Fact>) = facts.map { fact ->
-        FactsItem(fact.title, fact.description, fact.imageHref) {}
+    private fun setActionBarTitle(toolbarTitle: String?) {
+        if (!toolbarTitle.isNullOrBlank()) {
+            (activity as FactsActivity?)?.setActionBarTitle(toolbarTitle)
+        }
+    }
+
+    private fun createFactItems(facts: List<Fact>) = facts.mapNotNull { fact ->
+        if (!fact.title.isNullOrBlank() && !fact.description.isNullOrBlank()) {
+            FactsItem(fact.title ?: "", fact.description ?: "", fact.imageHref ?: "") {}
+        } else null
     }
 
     private fun setListAdapter() {

@@ -3,6 +3,7 @@ package com.telstra.facts.arch.ui
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
+import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -52,14 +53,14 @@ class ErrorDialogFragment : DialogFragment() {
         ): ErrorDialogFragment = ErrorDialogFragment()
             .apply {
             setButtonListener(listener)
-//            arguments = bundleOf(
-//                ARG_TITLE to title,
-//                ARG_MESSAGE to message,
-//                ARG_POSITIVE_BUTTON to positiveButton,
-//                ARG_NEGATIVE_BUTTON to negativeButton,
-//                ARG_NEUTRAL_BUTTON to neutralButton,
-//                ARG_CANCELABLE to cancellable
-//            )
+            arguments = bundleOf(
+                ARG_TITLE to title,
+                ARG_MESSAGE to message,
+                ARG_POSITIVE_BUTTON to positiveButton,
+                ARG_NEGATIVE_BUTTON to negativeButton,
+                ARG_NEUTRAL_BUTTON to neutralButton,
+                ARG_CANCELABLE to cancellable
+            )
         }
     }
 

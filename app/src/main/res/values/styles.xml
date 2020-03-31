@@ -9,7 +9,7 @@
     </style>
 
     <style name="Title">
-        <item name="android:textSize">@dimen/font_unit_16</item>
+        <item name="android:textSize">@dimen/font_unit_20</item>
         <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingExtra">@dimen/space_unit_1</item>
     </style>
@@ -23,7 +23,7 @@
     </style>
 
     <style name="Caption">
-        <item name="android:textSize">@dimen/font_unit_12</item>
+        <item name="android:textSize">@dimen/font_unit_16</item>
         <item name="android:lineSpacingExtra">@dimen/space_unit_1</item>
     </style>
 

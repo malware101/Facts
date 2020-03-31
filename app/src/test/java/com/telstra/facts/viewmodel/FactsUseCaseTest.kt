@@ -1,22 +1,21 @@
 package com.telstra.facts.viewmodel
 
 import com.telstra.facts.arch.viewmodel.testSchedulers
-import com.telstra.facts.integration.FactsRepository
-import com.telstra.facts.model.Fact
-import com.telstra.facts.viewmodel.FactsUseCase
+import com.telstra.facts.manager.FactsManager
+import com.telstra.facts.model.Facts
 import io.mockk.every
-import io.reactivex.Observable
 import io.mockk.impl.annotations.MockK
+import io.reactivex.Observable
 import org.junit.jupiter.api.Test
 
 internal class FactsUseCaseTest {
 
     @MockK
-    private lateinit var repository: FactsRepository
+    private lateinit var factsManager: FactsManager
 
     private val useCase: FactsUseCase by lazy {
         FactsUseCase(
-            repository,
+            factsManager,
             testSchedulers
         )
     }
@@ -24,12 +23,12 @@ internal class FactsUseCaseTest {
     @Test
     fun fetchFactsListTest() {
         every {
-            repository.fetchFacts()
-        } returns Observable.empty()
+            factsManager.fetchFacts()
+        } returns Observable.just(Facts("About Canada", listOf()))
         val testObserver = useCase.observable(Unit).test()
         testObserver.assertComplete()
         testObserver.assertValue { result ->
-            result == listOf<Fact>()
+            result == Facts("About Canada", listOf())
         }
     }
 }

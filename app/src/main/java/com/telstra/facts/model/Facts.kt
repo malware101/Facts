@@ -1,3 +1,6 @@
 package com.telstra.facts.model
 
-data class Facts (val title: String, val facts: List<Fact>)
+data class Facts(
+    val title: String,
+    val rows: List<Fact>
+)

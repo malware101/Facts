@@ -1,3 +1,5 @@
+@file:Suppress("IMPLICIT_CAST_TO_ANY")
+
 package com.telstra.facts.arch.util
 
 import android.util.Log

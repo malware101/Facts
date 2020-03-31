@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/today_nav_graph"
+    app:startDestination="@id/factsListFragment">
+
+    <fragment
+        android:id="@+id/factsListFragment"
+        android:name="com.telstra.facts.ui.FactsListFragment"
+        tools:layout="@layout/facts_list_fragment"></fragment>
+
+</navigation>

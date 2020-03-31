@@ -2,7 +2,7 @@ package com.telstra.facts.arch.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.telstra.facts.viewmodel.FactsListViewModel
+import com.telstra.facts.arch.viewmodel.MainViewModel
 import com.telstra.facts.arch.viewmodel.ViewModelFactory
 import com.telstra.facts.arch.viewmodel.ViewModelKey
 import dagger.Binds
@@ -21,6 +21,6 @@ abstract class ViewModelBindingModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(FactsListViewModel::class)
-    abstract fun bindInitializerViewModel(viewModel: FactsListViewModel): ViewModel
+    @ViewModelKey(MainViewModel::class)
+    abstract fun bindInitializerViewModel(viewModel: MainViewModel): ViewModel
 }

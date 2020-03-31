@@ -148,6 +148,11 @@ abstract class SectionedMenuAdapter<IT : SectionedMenuAdapter.Item>(private val 
             notifyDataSetChanged()
         }
     }
+
+    fun clearItems() {
+        this.items = listOf()
+        notifyDataSetChanged()
+    }
 }
 
 abstract class SectionedMenuItemHolder<ITEM : SectionedMenuAdapter.Item>(view: View) : RecyclerView.ViewHolder(view) {

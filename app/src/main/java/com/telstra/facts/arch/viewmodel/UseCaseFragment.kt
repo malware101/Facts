@@ -1,6 +1,8 @@
 package com.telstra.facts.arch.viewmodel
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.telstra.facts.arch.ui.BaseFragment
 import com.telstra.facts.arch.util.showException
@@ -26,19 +28,6 @@ abstract class UseCaseFragment<VM : UseCaseViewModel, RVM : BaseResultViewModel<
 
         restoreViewModelState(savedInstanceState)
         initUseCaseViewModel(view, viewModel)
-        bindUseCaseViewModel(viewModel)
-    }
-
-    protected fun bindUseCaseViewModel(viewModel: UseCaseViewModel) {}
-
-    protected open fun unbindUseCaseViewModel(viewModel: VM) {
-        viewModel.error.removeObservers(this)
-        viewModel.isLoading.removeObservers(this)
-    }
-
-    override fun onDestroyView() {
-        unbindUseCaseViewModel(viewModel)
-        super.onDestroyView()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -57,12 +46,6 @@ abstract class UseCaseFragment<VM : UseCaseViewModel, RVM : BaseResultViewModel<
         }
     }
 
-    protected open fun processException(throwable: Throwable) {
-        showException(throwable)
-    }
-
-    protected open fun processLoading(isLoading: Boolean) {}
-
     protected abstract fun initUseCaseViewModel(view: View, viewModel: VM)
 
     // This is a workaround the issue with multiple same classes being generated if there is a middle class
@@ -71,3 +54,4 @@ abstract class UseCaseFragment<VM : UseCaseViewModel, RVM : BaseResultViewModel<
     @Inject
     override lateinit var dummy: DaggerInjectionWorkaroundField
 }
+
