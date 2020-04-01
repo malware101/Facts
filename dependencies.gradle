@@ -39,6 +39,7 @@ versions.androidxTest = "1.2.0"
 versions.strikt = "0.24.0"
 versions.mockk = "1.9.3"
 versions.jacoco = "0.8.5"
+versions.navigation = "2.3.0-alpha04"
 
 ext.versions = versions
 
@@ -127,6 +128,7 @@ def test = [:]
     test.mockk = "io.mockk:mockk:$versions.mockk"
     test.androidxTestCore = "androidx.test:core:$versions.androidxTest"
     test.arch = "androidx.arch.core:core-testing:$versions.lifecycle"
+    test.nav = "androidx.navigation:navigation-testing:$versions.navigation"
 deps.test = test
 
 

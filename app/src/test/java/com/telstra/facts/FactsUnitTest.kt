@@ -13,6 +13,7 @@ import io.mockk.mockk
 import io.mockk.spyk
 import org.junit.Assert
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 
 class FactsUnitTest {
 
@@ -34,6 +35,8 @@ class FactsUnitTest {
                 testSchedulers
             )
         )
+
+        viewModel = FactsListViewModel(factsUseCase)
     }
 
     // State restoration

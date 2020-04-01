@@ -78,8 +78,8 @@ dependencies {
     testImplementation deps.test.strikt
     testRuntimeOnly deps.test.jupiterEngine
     testImplementation deps.test.mockk
-
     testImplementation deps.test.jupiterParams
     androidTestImplementation deps.test.strikt
     androidTestImplementation deps.test.mockk
+    androidTestImplementation deps.test.nav
 }

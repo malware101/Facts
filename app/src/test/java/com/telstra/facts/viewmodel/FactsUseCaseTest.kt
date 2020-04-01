@@ -3,9 +3,11 @@ package com.telstra.facts.viewmodel
 import com.telstra.facts.arch.viewmodel.testSchedulers
 import com.telstra.facts.manager.FactsManager
 import com.telstra.facts.model.Facts
+import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.reactivex.Observable
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 internal class FactsUseCaseTest {
@@ -18,6 +20,11 @@ internal class FactsUseCaseTest {
             factsManager,
             testSchedulers
         )
+    }
+
+    @BeforeEach
+    fun setUp() {
+        MockKAnnotations.init(this)
     }
 
     @Test
